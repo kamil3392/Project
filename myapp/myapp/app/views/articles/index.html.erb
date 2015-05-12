@@ -1,13 +1,16 @@
 <table border="1" colspan="10">
   <tr>
-    <th>Name Project</th>
+    <th>PROJECT NAME</th>
     <th colspan="2"></th>
   </tr>
  
   <% @articles.each do |article| %>
     <tr>
       <td><%= article.title %></td>
-      <td><%= link_to 'Show', article_path(article) %></td>
+      <td><%= link_to 'show project details', article_path(article) %></td>
+      <td><%= link_to 'delete project', article_path(article),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>
