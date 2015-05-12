@@ -1,17 +1,15 @@
-<h1>Listing articles</h1>
- 
-<table>
+<table border="1" colspan="10">
   <tr>
-    <th>Name</th>
-    <th>Descryption</th>
+    <th>Name Project</th>
+    <th colspan="2"></th>
   </tr>
  
   <% @articles.each do |article| %>
     <tr>
       <td><%= article.title %></td>
-      <td><%= article.text %></td>
+      <td><%= link_to 'Show', article_path(article) %></td>
     </tr>
   <% end %>
 </table>
-
+<br/>
 <%= link_to 'New Project', new_article_path %>
