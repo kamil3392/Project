@@ -7,30 +7,7 @@
   <strong>DESCRYPTION:</strong>
   <%= @article.text %>
 </p>
-<h2>Add a ticket:</h2>
-<%= form_for([@article, @article.tickets.build]) do |f| %>
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :descryption%><br>
-    <%= f.text_area :descryption %>
-  </p>
-  <p>
-    <%= f.label :priority%><br>
-    <%= f.text_area :priority %>
-  </p>
-  <p>
-    <%= f.label :rank%><br>
-    <%= f.text_area :rank %>
-  </p>
-  <p>
-    <%= f.label :status%><br>
-    <%= f.text_area :status %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+
+
+
 <%= link_to 'Project List', articles_path %>

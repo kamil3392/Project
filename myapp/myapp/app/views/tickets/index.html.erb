@@ -1,0 +1,57 @@
+
+
+<h2>Tickety</h2>
+
+<% @article.tickets.each do |ticket| %>
+  <p>
+    <strong>Title:</strong>
+    <%= ticket.title %>
+  </p>
+  <p>
+    <strong>Description:</strong>
+    <%= ticket.descryption %>
+  </p>
+  <p>
+    <strong>Priority:</strong>
+    <%= ticket.priority %>
+  </p>
+  <p>
+    <strong>Rank:</strong>
+    <%= ticket.rank %>
+  </p>
+    <p>
+    <strong>Status:</strong>
+    <%= ticket.status %>
+  </p>
+ 
+
+<% end %>
+
+
+<h1>Dodaj ticket</h1>
+
+<%= form_for([@article, @article.tickets.build]) do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :descryption%>
+  </p>
+  <p>
+    <%= f.label :priority %><br>
+    <%= f.text_area :priority %>
+  </p>
+  <p>
+    <%= f.label :status %><br>
+    <%= f.text_area :status %>
+  </p>
+  <p>
+    <%= f.label :rank %><br>
+    <%= f.text_area :rank %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
