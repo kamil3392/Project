@@ -1,29 +1,25 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing User Sessions</h1>
+<h1>Listing user_sessions</h1>
 
 <table>
-  <thead>
-    <tr>
-      <th>Username</th>
-      <th>Password</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <tr>
+    <th>Username</th>
+    <th>Password</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
 
-  <tbody>
-    <% @user_sessions.each do |user_session| %>
-      <tr>
-        <td><%= user_session.username %></td>
-        <td><%= user_session.password %></td>
-        <td><%= link_to 'Show', user_session %></td>
-        <td><%= link_to 'Edit', edit_user_session_path(user_session) %></td>
-        <td><%= link_to 'Destroy', user_session, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+<% @user_sessions.each do |user_session| %>
+  <tr>
+    <td><%= user_session.username %></td>
+    <td><%= user_session.password %></td>
+    <td><%= link_to 'Show', user_session %></td>
+    <td><%= link_to 'Edit', edit_user_session_path(user_session) %></td>
+    <td><%= link_to 'Destroy', user_session, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
 </table>
 
-<br>
+<br />
 
 <%= link_to 'New User session', new_user_session_path %>
